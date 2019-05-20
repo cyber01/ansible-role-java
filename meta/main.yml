@@ -1,0 +1,27 @@
+---
+galaxy_info:
+  author: Sergey Brovko
+  description: Installs java
+  role_name: java
+  issue_tracker_url: https://github.com/cyber01/ansible-role-java
+  license: license (BSD, MIT)
+  min_ansible_version: 2.4
+  platforms:
+    - name: EL
+      versions:
+        - 7
+    - name: Fedora
+      versions:
+        - 29
+        - 28
+        - 27
+        - 26
+        - 25
+
+  galaxy_tags:
+    - java
+    - jdk
+    - jvm
+
+dependencies: []
+allow_duplicates: true

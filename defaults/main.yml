@@ -1,0 +1,4 @@
+---
+# defaults file for ansible-role-java
+# Java JDK version 1.8.0 (Java 8) or 11 (Java 11)
+ansible_java_version: "1.8.0"

@@ -1,0 +1,33 @@
+---
+sudo: required
+language: python
+services: docker
+
+
+env:
+  global:
+    - ROLE_NAME: java
+
+install:
+  - pip install --upgrade ansible
+  - pip install --upgrade ansible-lint
+  - pip install --upgrade docker
+  - pip install --upgrade molecule
+  - pip install --upgrade netaddr
+  - pip install --upgrade testinfra
+
+before_script:
+  # Use actual Ansible Galaxy role name for the project directory.
+  - cd ../
+  - mv ansible-role-$ROLE_NAME cyber01.$ROLE_NAME
+  - cd cyber01.$ROLE_NAME
+
+
+# Let`s go tests
+script:
+  - molecule --version
+  - ansible --version
+  - molecule test --all
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
